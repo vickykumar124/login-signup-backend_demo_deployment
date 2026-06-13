@@ -32,6 +32,11 @@ app.use("/api/user", userRouter);
 app.use("/api/movie", movieRouter);
 
 
+app.use("/", function (req, res) {
+    console.log("Thank you for making a request");
+    res.status(200).send("Hello from server");
+})
+
 
 const PORT=process.env.PORT||3000
 app.listen(PORT, function () {
